@@ -2,6 +2,15 @@ package aula03.exercicios;
 
 import java.util.Arrays;
 
+/**
+ * 8) A calculadora de Luciana pifou, justo quando ela precisa fazer vários cálculos. Ela tem um computador, mas não
+ * sabe que um dos acessórios do Windows é uma calculadora. Sendo estudante de programação, Luciana resolveu fazer um
+ * programa. A especificação que bolou prevê que programa leia dois números inteiros (o que atende suas necessidades) e
+ * em seguida um símbolo de operação. Se este for '+', o programa soma os números, se '-', subtrai, se '*' multiplica e
+ * se '/' divide. Se o símbolo for diferente desses, é mostrada uma mensagem de erro. O programa, antes de dividir,
+ * critica se o divisor é zero e mostra uma mensagem de erro. Implemente um programa que construa essa calculadora para
+ * Luciana
+ */
 public class Ex008 {
     static void main() {
         String calculo = IO.readln("C: ");
@@ -18,7 +27,7 @@ public class Ex008 {
         char[] caracteresCalculo = calculo.toCharArray();
         char operador = ' ';
 
-        double resultado = 0;
+        double resultado;
 
         // Salva o operador
         for (char caractere : caracteresCalculo) {
@@ -29,7 +38,7 @@ public class Ex008 {
 
         // Troca o operador da String recebida por ";" para fazer o split
         String calculoParaSplit = calculo.replace(operador, ';');
-        String[] operandosString = calculoParaSplit.split(String.valueOf(";").trim());
+        String[] operandosString = calculoParaSplit.split(";".trim());
 
         // Transforma os operandos em números
         double[] operandos = Arrays.stream(operandosString).mapToDouble(Double::parseDouble).toArray();
