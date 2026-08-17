@@ -1,9 +1,9 @@
 package aula03.exercicios;
 
 /**
- * Escreva um programa para ler 2 números e escrever a soma dos inteiros existentes entre os 2 números lidos (incluindo
- * os números lidos na soma). Exemplo: Números lidos: 2 e 5 Resultado: 2+3+4+5 = 14. Observação: Considere que o segundo
- * valor lido será sempre maior que o primeiro valor lido.
+ * 15) Escreva um programa para ler 2 números e escrever a soma dos inteiros existentes entre os 2 números lidos
+ * (incluindo os números lidos na soma). Exemplo: Números lidos: 2 e 5 Resultado: 2+3+4+5 = 14. Observação: Considere
+ * que o segundo valor lido será sempre maior que o primeiro valor lido.
  */
 public class Ex015 {
     static void main() {
