@@ -8,7 +8,7 @@ import java.util.Random;
  */
 public class Ex001 {
     public static int[] geraVetor(int numElementos) {
-        int vetor[] = new int[numElementos];
+        int[] vetor = new int[numElementos];
         Random aleatorio = new Random();
         for (int i = 0; i < numElementos; i++) {
             vetor[i] = aleatorio.nextInt(1, 100);
