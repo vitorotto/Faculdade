@@ -2,7 +2,7 @@ package Aula05.exercicios;
 
 import java.util.Random;
 
-import static utils.Saidas.mostraVetor;
+import static utils.VetorUtils.stringVetorInt;
 
 /**
  * 1. Criar um vetor A com 5 elementos, carregar ele com números aleatórios. Declarar um vetor B. Copiar todos os
@@ -22,7 +22,7 @@ public class Ex001 {
         int[] vetor = geraVetor(10);
         int[] vetorDois = new int[10];
         System.arraycopy(vetor, 0, vetorDois, 0, vetor.length);
-        IO.println(mostraVetor(vetor, "Vetor 1"));
-        IO.println(mostraVetor(vetorDois, "Vetor 2"));
+        IO.println(stringVetorInt(vetor, "Vetor 1"));
+        IO.println(stringVetorInt(vetorDois, "Vetor 2"));
     }
 }
