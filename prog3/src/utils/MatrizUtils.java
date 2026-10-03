@@ -67,4 +67,17 @@ public class MatrizUtils {
             IO.println();
         }
     }
+
+    /**
+     * Exibe os elementos de uma matriz de caracteres
+     * @param matriz Matriz com os elementos que serão exibidos
+     */
+    public static void mostraMatrizChar(char[][] matriz) {
+        for (int l = 0; l < matriz.length; l++) {
+            for (int c = 0; c < matriz[l].length; c++) {
+                IO.print("[" + matriz[l][c] + "]");
+            }
+            IO.println();
+        }
+    }
 }

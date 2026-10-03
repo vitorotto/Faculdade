@@ -30,4 +30,19 @@ public class VetorUtils {
         retorno += "]";
         IO.println(retorno);
     }
+
+    /**
+     * Exibe os dados de um vetor de valores caracteres
+     * @param vetor Vetor que será exibido
+     * @param nome Nome do vetor que será exibido
+     */
+    public static void mostraVetorChar(char[] vetor, String nome) {
+        String retorno = "\nDados no vetor: " + nome + "\n[";
+        for (int i = 0; i < vetor.length - 1; i++) {
+            retorno += vetor[i] + ", ";
+        }
+        retorno += vetor[vetor.length - 1];
+        retorno += "]";
+        IO.println(retorno);
+    }
 }
