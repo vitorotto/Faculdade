@@ -18,6 +18,7 @@ public class Criptografia {
 
     public static void exibeMenu() {
         IO.println("CRIPTOGRAFIA:");
+        IO.println("Dupla: Fábio Miguel Nascimento e Vitor Hugo Otto");
         IO.println("1 - Criptografar");
         IO.println("2 - Descriptografar");
         IO.println("0 - Sair");
