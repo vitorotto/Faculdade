@@ -6,9 +6,13 @@ public class Criptografia {
     static void main() {
         int opc = -1;
         while (opc != 0) {
-            exibeMenu();
-            opc = Integer.parseInt(IO.readln("Opção: "));
-            executaFuncao(opc);
+            try {
+                exibeMenu();
+                opc = Integer.parseInt(IO.readln("Opção: "));
+                executaFuncao(opc);
+            } catch (NumberFormatException e) {
+                IO.println("A opção informada não é um número.");
+            }
         }
     }
 
@@ -34,7 +38,8 @@ public class Criptografia {
         }
     }
 
-    private static void cifrar() throws Exception{
+    private static void cifrar() throws RuntimeException {
+        // Entradas
         String texto = IO.readln("Texto a cifrar: ");
         String chave = IO.readln("Chave utilizada: ");
         int deslocamento = Integer.parseInt(IO.readln("Deslocamento: "));
@@ -43,45 +48,42 @@ public class Criptografia {
         String chaveCesar = Cesar.cifraTextoCesar(chave, deslocamento);
         // Aplica cifra de Vigenere ao resultado da cifra de Cesar
         String resultado = Vigenere.cifraTextoVigenere(textoCesar, chaveCesar);
-
-        String hashRecebido;
-
+        // Gera o HASH
+        String hashGerado;
         try {
-            hashRecebido = Hash.genHash(resultado);
-        } catch(NoSuchAlgorithmException e) {
-            throw new RuntimeException("Algorithm for hashing not found");
+            hashGerado = Hash.genHash(resultado);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("Algorítmo de HASH não encontrado");
         }
-
-        IO.println("Resultado: %s | Hash SHA-256: %s".formatted(resultado, hashRecebido));
+        IO.println("Resultado: %s | Hash SHA-256: %s".formatted(resultado, hashGerado));
     }
 
     private static void decifrar() throws Exception {
+        // Entradas
         String texto = IO.readln("Texto a decifrar: ");
         String chave = IO.readln("Chave utilizada: ");
         String hashRecebido = IO.readln("Hash SHA-256 recebido: ");
-
         int deslocamento = Integer.parseInt(IO.readln("Deslocamento: "));
-
+        // Realiza a validação do HASH recebido
         boolean isValid;
-
         try {
             isValid = Hash.validateHash(texto, hashRecebido);
         } catch (NoSuchAlgorithmException e) {
-            throw new RuntimeException("Algorithm for hashing not found");
+            throw new RuntimeException("Algorítmo de criptografia inválido");
         }
-
-        if(!isValid) {
-            throw new Exception("Text or hash is not the same");
+        // Se for inválido
+        if (!isValid) {
+            throw new Exception("Algorítmo de HASH não encontrado");
+            // Se o HASH não foi informado
+        } else if (hashRecebido.isEmpty()) {
+            throw new Exception("HASH não informado");
         }
-
         // Cifra a chave da mensagem usando Cesar
         String chaveCesar = Cesar.cifraTextoCesar(chave, deslocamento);
         // Decifra o texto que veio com cifra de Cesar aplicada usando a chave com a cifra de Cesar
         String textoCesar = Vigenere.decifraTextoVigenere(texto, chaveCesar);
         // Decifra mensagem com cifra de Cesar
         String resultado = Cesar.decifraTextoCesar(textoCesar, deslocamento);
-
         IO.println("Resultado: " + resultado);
     }
-
 }
