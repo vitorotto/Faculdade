@@ -9,8 +9,5 @@
         <module name="prog3-mysql" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="prog3-mysql" target="26" />
-    </bytecodeTargetLevel>
   </component>
 </project>

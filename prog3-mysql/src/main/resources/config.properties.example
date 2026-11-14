@@ -1,0 +1,5 @@
+bd.servidor = Localhost or server IP
+bd.porta = Port
+bd.banco = database name
+bd.usuario = user name
+bd.senha = password for user
