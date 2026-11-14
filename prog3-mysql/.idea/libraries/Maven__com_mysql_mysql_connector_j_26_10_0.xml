@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="Maven: com.mysql:mysql-connector-j:26.10.0" type="java-imported" external-system-id="Maven">
+    <properties groupId="com.mysql" artifactId="mysql-connector-j" version="26.10.0" baseVersion="26.10.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mysql/mysql-connector-j/26.10.0/mysql-connector-j-26.10.0.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mysql/mysql-connector-j/26.10.0/mysql-connector-j-26.10.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/mysql/mysql-connector-j/26.10.0/mysql-connector-j-26.10.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
