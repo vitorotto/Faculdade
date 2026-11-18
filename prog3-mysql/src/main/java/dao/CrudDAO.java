@@ -13,7 +13,7 @@ public interface CrudDAO<T> {
 
     List<T> listar() throws SQLException;
 
-    List<T> busca() throws SQLException;
+    List<T> busca(String termo) throws SQLException;
 
     T buscaID(Integer id) throws SQLException;
 }

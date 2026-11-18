@@ -4,24 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="caf15738-b8c6-48fa-8647-6c2c8fe85eaa" name="Changes" comment="feat: Class basic practice for learn about how to connect Java with MySQL for data persistence.">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/remote-targets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/banco/Banco.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/config/Configuracoes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/ContatoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/CrudDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/model/Contato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/teste/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_4_36_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_mysql_mysql_connector_j_26_10_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+    <list default="true" id="caf15738-b8c6-48fa-8647-6c2c8fe85eaa" name="Changes" comment="feat: Class practice - Folder teste contains all implemented methods for the CRUD of &quot;contatos&quot;.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/Alterar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/BuscaId.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/BuscaTermo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/Deletar.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/Inserir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/teste/Listar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/ContatoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ContatoDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dao/CrudDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/CrudDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/teste/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/teste/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ted3e4/conta-bancaria/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ted3e4/conta-bancaria/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,61 +54,61 @@
 }</component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000005670581413" />
-      <entry key="S2" value="1.0274428796062265" />
-      <entry key="S5" value="1.2466900886898753" />
-      <entry key="S10" value="1.7938558251980488" />
-      <entry key="S30" value="7.6863427280613035" />
-      <entry key="S60" value="16.02586003955654" />
-      <entry key="M2" value="24.334764435092602" />
-      <entry key="M5" value="31.696950050657374" />
-      <entry key="M10" value="34.688521653889524" />
-      <entry key="M15" value="35.75510046150774" />
-      <entry key="M30" value="36.85848116659034" />
-      <entry key="H1" value="37.42438786029408" />
-      <entry key="H2" value="37.71096989373715" />
-      <entry key="H4" value="37.855177569807545" />
-      <entry key="D1" value="37.975820120420025" />
-      <entry key="W1" value="37.99654468160808" />
+      <entry key="MS100" value="1.000000000000002" />
+      <entry key="MS500" value="1.0012585916696741" />
+      <entry key="S2" value="1.3532844756911695" />
+      <entry key="S5" value="2.801414843257551" />
+      <entry key="S10" value="5.185153877451003" />
+      <entry key="S30" value="13.006150205797338" />
+      <entry key="S60" value="19.646695762457636" />
+      <entry key="M2" value="25.12165503069992" />
+      <entry key="M5" value="29.494277041204757" />
+      <entry key="M10" value="31.181466623327662" />
+      <entry key="M15" value="31.772514889899416" />
+      <entry key="M30" value="32.37855391447191" />
+      <entry key="H1" value="32.687326251326276" />
+      <entry key="H2" value="32.85348295969331" />
+      <entry key="H4" value="33.73378209378231" />
+      <entry key="D1" value="63.896926389454926" />
+      <entry key="W1" value="90.67815937830142" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS500" value="7.689411780257104E-266" />
+      <entry key="S2" value="5.265908149609115E-67" />
+      <entry key="S5" value="3.0802737290522393E-27" />
+      <entry key="S10" value="5.5500213774833686E-14" />
+      <entry key="S30" value="3.8144467104077415E-5" />
+      <entry key="S60" value="0.006176120716443085" />
+      <entry key="M2" value="0.0785882988519479" />
+      <entry key="M5" value="0.3615290127337163" />
+      <entry key="M10" value="0.6012728272038548" />
+      <entry key="M15" value="0.7123843745372292" />
+      <entry key="M30" value="0.8440286574146902" />
+      <entry key="H1" value="0.9187106687424663" />
+      <entry key="H2" value="0.9606140752389877" />
+      <entry key="H4" value="1.1450496551970932" />
+      <entry key="D1" value="7.2815951308307625" />
+      <entry key="W1" value="12.717492684102822" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.7791645796604998" />
-      <entry key="MS500" value="0.9513188105750083" />
-      <entry key="S2" value="1.0146377933291915" />
-      <entry key="S5" value="1.240194218033081" />
-      <entry key="S10" value="1.7885060081939121" />
-      <entry key="S30" value="7.6797111011779515" />
-      <entry key="S60" value="16.020113869830016" />
-      <entry key="M2" value="24.330831330295894" />
-      <entry key="M5" value="31.69502475349065" />
-      <entry key="M10" value="34.68748955765044" />
-      <entry key="M15" value="35.75439604689569" />
-      <entry key="M30" value="36.85812054159735" />
-      <entry key="H1" value="37.42420539662774" />
-      <entry key="H2" value="37.71087811815247" />
-      <entry key="H4" value="37.855131545325115" />
-      <entry key="D1" value="37.97581243062402" />
-      <entry key="W1" value="37.99654358259846" />
+      <entry key="MS100" value="0.9592641193252643" />
+      <entry key="MS500" value="0.9920193763854477" />
+      <entry key="S2" value="1.2840196862098885" />
+      <entry key="S5" value="2.7155532926695054" />
+      <entry key="S10" value="5.121650538520094" />
+      <entry key="S30" value="12.976871012396018" />
+      <entry key="S60" value="19.635678598892696" />
+      <entry key="M2" value="25.1882411654714" />
+      <entry key="M5" value="29.846600434586634" />
+      <entry key="M10" value="31.776314658949534" />
+      <entry key="M15" value="32.48005526347671" />
+      <entry key="M30" value="33.219828786810396" />
+      <entry key="H1" value="33.60456598744378" />
+      <entry key="H2" value="33.81333542969768" />
+      <entry key="H4" value="34.87840200549137" />
+      <entry key="D1" value="71.17818465214202" />
+      <entry key="W1" value="103.39557038879178" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -128,6 +122,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Inserir.executor": "Run",
     "Application.Main.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -137,8 +132,10 @@
     "git-widget-placeholder": "programacao__3",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
@@ -148,7 +145,41 @@
     "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="\\wsl.localhost\Ubuntu\home\vitor\Repos\Faculdade\prog3-mysql\src\main\java\teste" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="teste" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Alterar">
+    <configuration name="Alterar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="teste.Alterar" />
+      <module name="prog3-mysql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Inserir" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="teste.Inserir" />
+      <module name="prog3-mysql" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="teste.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="teste.Main" />
       <module name="prog3-mysql" />
@@ -164,6 +195,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Alterar" />
+        <item itemvalue="Application.Inserir" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -190,7 +223,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: Class basic practice for learn about how to connect Java with MySQL for data persistence." />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: Class basic practice for learn about how to connect Java with MySQL for data persistence." />
+    <MESSAGE value="feat: Class practice - Folder teste contains all implemented methods for the CRUD of &quot;contatos&quot;." />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Class practice - Folder teste contains all implemented methods for the CRUD of &quot;contatos&quot;." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

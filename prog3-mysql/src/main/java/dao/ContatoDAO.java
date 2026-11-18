@@ -3,7 +3,11 @@ package dao;
 import banco.Banco;
 import model.Contato;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,6 +48,16 @@ public class ContatoDAO implements CrudDAO<Contato>{
 
     @Override
     public boolean alterar(Contato entidade) throws SQLException {
+        Connection conexao = banco.conectar();
+        String sql = "update tb_contato set nome = ?, e_mail = ?, telefone = ? where contato_id = ?";
+        PreparedStatement requisicao = conexao.prepareStatement(sql);
+        requisicao.setString(1,entidade.getNome());
+        requisicao.setString(2,entidade.geteMail());
+        requisicao.setString(3,entidade.getTelefone());
+        requisicao.setInt(4,entidade.getContatoId());
+        int contLinha = requisicao.executeUpdate();
+        if(contLinha>0)
+            return true;
         return false;
     }
 
@@ -81,12 +95,43 @@ public class ContatoDAO implements CrudDAO<Contato>{
     }
 
     @Override
-    public List<Contato> busca() throws SQLException {
-        return List.of();
+    public List<Contato> busca(String termo) throws SQLException {
+        Connection conexao = banco.conectar();
+        List<Contato> lista = new ArrayList<>();
+        String sql = "select contato_id, nome, e_mail, telefone from tb_contato " +
+                "where nome LIKE ? or telefone LIKE ? or e_mail LIKE ?";
+        PreparedStatement requisicao = conexao.prepareStatement(sql);
+        requisicao.setString(1,"%"+termo+"%");
+        requisicao.setString(2,"%"+termo+"%");
+        requisicao.setString(3,"%"+termo+"%");
+        ResultSet resultado = requisicao.executeQuery();
+        while(resultado.next()){
+            Integer contatoID = resultado.getInt("contato_id");
+            String nome = resultado.getString("nome");
+            String eMail = resultado.getString("e_mail");
+            String telefone = resultado.getString("telefone");
+            Contato contato = new Contato(nome, eMail, telefone);
+            contato.setContatoId(contatoID);
+            lista.add(contato);
+        }
+        return lista;
     }
 
     @Override
     public Contato buscaID(Integer id) throws SQLException {
+        Connection conexao = banco.conectar();
+        String sql = "select nome, e_mail, telefone from tb_contato where contato_id = ?";
+        PreparedStatement requisicao = conexao.prepareStatement(sql);
+        requisicao.setInt(1,id);
+        ResultSet resultato = requisicao.executeQuery();
+        if(resultato.next()){
+            String nome = resultato.getString("nome");
+            String eMail = resultato.getString("e_mail");
+            String telefone = resultato.getString("telefone");
+            Contato contato = new Contato(nome, eMail, telefone);
+            contato.setContatoId(id);
+            return contato;
+        }
         return null;
     }
 }
