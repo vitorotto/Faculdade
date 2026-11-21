@@ -16,6 +16,9 @@ public class MainAccountCrudTest {
         // Update test
         account.setBalance(BigDecimal.valueOf(4000.00));
         UpdateAccountTest.executeUpdateTest(account, currentAccountId);
+        // List test
+        ListAccountTest.executeAccountListTest();
+        FindAccountByTermTest.executeFindAccountByTermTest("es");
         // Delete test
         DeleteAccountTest.executeDeleteTest(account, currentAccountId);
         IO.println("*== ================== ==*");

@@ -12,7 +12,7 @@ public interface CrudDAO<T> {
 
     List<T> listAccount() throws SQLException;
 
-    List<T> findAccount(String term) throws SQLException;
+    List<T> findAccountByTerm(String term) throws SQLException;
 
     T findAccountById(Integer id) throws SQLException;
 }

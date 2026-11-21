@@ -3,7 +3,9 @@ package dao;
 import database.Database;
 import model.Account;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AccountDAO implements CrudDAO<Account> {
@@ -56,27 +58,61 @@ public class AccountDAO implements CrudDAO<Account> {
 
     @Override
     public List<Account> listAccount() throws SQLException {
-        return List.of();
+        List<Account> list = new ArrayList<>();
+        try (Connection connection = database.connect();) {
+            String sqlScript = "select conta_id, numero, titular, saldo from tb_conta";
+            PreparedStatement request = connection.prepareStatement(sqlScript);
+            ResultSet result = request.executeQuery();
+            while (result.next()) {
+                Integer accountId = result.getInt("conta_id");
+                String number = result.getString("numero");
+                String owner = result.getString("titular");
+                BigDecimal balance = result.getBigDecimal("saldo");
+                Account account = new Account(number, owner, balance);
+                account.setAccountId(accountId);
+                list.add(account);
+            }
+            return list;
+        }
     }
 
     @Override
-    public List<Account> findAccount(String term) throws SQLException {
-        return List.of();
+    public List<Account> findAccountByTerm(String term) throws SQLException {
+        List<Account> list = new ArrayList<>();
+        try (Connection connection = database.connect();) {
+            String sqlScript = "select conta_id, numero, titular, saldo from tb_conta where numero like ? or titular like ?";
+            PreparedStatement request = connection.prepareStatement(sqlScript);
+            request.setString(1, "%" + term + "%");
+            request.setString(2, "%" + term + "%");
+            ResultSet result = request.executeQuery();
+            while (result.next()) {
+                Integer accountId = result.getInt("conta_id");
+                String number = result.getString("numero");
+                String owner = result.getString("titular");
+                BigDecimal balance = result.getBigDecimal("saldo");
+                Account account = new Account(number, owner, balance);
+                account.setAccountId(accountId);
+                list.add(account);
+            }
+            return list;
+        }
     }
 
     @Override
     public Account findAccountById(Integer id) throws SQLException {
         try (Connection connection = database.connect()) {
-            String sqlScript = "select conta_id, numero, titular, saldo from banco_db.tb_conta where conta_id=?;";
+            String sqlScript = "select conta_id, numero, titular, saldo from tb_conta where conta_id=?;";
             PreparedStatement request = connection.prepareStatement(sqlScript);
             request.setInt(1, id);
             ResultSet requestResult = request.executeQuery();
             if (requestResult.next()) {
-                return new Account(
+                Account account = new Account(
                         requestResult.getString("numero"),
                         requestResult.getString("titular"),
                         requestResult.getBigDecimal("saldo")
                 );
+                account.setAccountId(requestResult.getInt("conta_id"));
+                return account;
             }
         }
         return null;
