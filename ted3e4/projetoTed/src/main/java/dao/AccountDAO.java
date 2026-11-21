@@ -72,7 +72,6 @@ public class AccountDAO implements CrudDAO<Account> {
             request.setInt(1, id);
             ResultSet requestResult = request.executeQuery();
             if (requestResult.next()) {
-                IO.println("Account founded");
                 return new Account(
                         requestResult.getString("numero"),
                         requestResult.getString("titular"),
