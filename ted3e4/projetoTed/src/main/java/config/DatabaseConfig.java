@@ -9,7 +9,7 @@ public class DatabaseConfig {
     public DatabaseConfig() {
         properties = new Properties();
         try (InputStream readFile = DatabaseConfig.class.
-                getClassLoader().getResourceAsStream("config.properties")) {
+                getClassLoader().getResourceAsStream("db.properties")) {
             properties.load(readFile);
         } catch (Exception e) {
             throw new IllegalStateException("Não foi possível ler o arquivo de configuração");

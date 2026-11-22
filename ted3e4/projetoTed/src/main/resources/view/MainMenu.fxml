@@ -26,4 +26,8 @@
     <Button text="Consultar" onAction="#onConsultar" maxWidth="Infinity"/>
     <Button text="Alterar" onAction="#onAlterar" maxWidth="Infinity"/>
     <Button text="Excluir" onAction="#onExcluir" maxWidth="Infinity"/>
+    <Button text="Depositar" onAction="#onDepositar" maxWidth="Infinity"/>
+    <Button text="Sacar" onAction="#onSacar" maxWidth="Infinity"/>
+    <Button text="Extrato" onAction="#onExtrato" maxWidth="Infinity"/>
+    <Button text="Listar Contas" onAction="#onListar" maxWidth="Infinity"/>
 </VBox>

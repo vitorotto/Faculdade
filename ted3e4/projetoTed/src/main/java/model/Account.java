@@ -7,11 +7,20 @@ public class Account {
     private String number;
     private String owner;
     private BigDecimal balance;
+    private AccountType accountType;
 
     public Account(String number, String owner, BigDecimal balance) {
         this.number = number;
         this.owner = owner;
         this.balance = balance;
+    }
+
+    public AccountType getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(AccountType accountType) {
+        this.accountType = accountType;
     }
 
     public Integer getAccountId() {

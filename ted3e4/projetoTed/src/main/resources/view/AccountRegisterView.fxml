@@ -3,7 +3,9 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
@@ -22,15 +24,9 @@
         <ColumnConstraints hgrow="ALWAYS"/>
     </columnConstraints>
 
-    <Label fx:id="searchLabel" text="Pesquisa:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-    <HBox fx:id="searchRow" spacing="8" GridPane.rowIndex="0" GridPane.columnIndex="1">
-        <TextField fx:id="searchField" promptText="Número ou titular" HBox.hgrow="ALWAYS"/>
-        <Button fx:id="searchButton" text="Pesquisar"/>
-    </HBox>
-
-    <Label fx:id="idLabel" text="Código:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-    <HBox fx:id="idRow" spacing="8" GridPane.rowIndex="1" GridPane.columnIndex="1">
-        <TextField fx:id="idField" promptText="Código da conta" HBox.hgrow="ALWAYS"/>
+    <Label fx:id="idLabel" text="Conta:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <HBox fx:id="idRow" spacing="8" GridPane.rowIndex="0" GridPane.columnIndex="1">
+        <TextField fx:id="idField" promptText="Número da conta" HBox.hgrow="ALWAYS"/>
         <Button fx:id="loadButton" text="Buscar"/>
     </HBox>
 
@@ -46,8 +42,26 @@
     <TextField fx:id="balanceField" promptText="0,00"
                GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
+    <HBox spacing="8"
+          alignment="CENTER"
+          GridPane.rowIndex="5"
+          GridPane.columnIndex="0"
+          GridPane.columnSpan="2">
+        <Separator HBox.hgrow="ALWAYS"/>
+        <Label text="Dados específicos"/>
+        <Separator HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <Label fx:id="typeLabel" text="Tipo:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <ComboBox fx:id="typeComboBox" maxWidth="Infinity"
+              GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+    <Label fx:id="specificLabel" text="Limite:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="specificField" promptText="0,00"
+               GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
     <HBox spacing="12" alignment="CENTER_RIGHT"
-          GridPane.rowIndex="5" GridPane.columnIndex="1">
+          GridPane.rowIndex="8" GridPane.columnIndex="1">
         <Button text="Cancelar" fx:id="cancelButton"/>
         <Button text="Salvar" fx:id="actionButton"/>
     </HBox>

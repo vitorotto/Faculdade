@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="520.0" prefWidth="920.0"
+      spacing="12"
+      xmlns="http://javafx.com/javafx/26"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controller.AccountListController">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Pesquisa por número ou titular"/>
+    <HBox spacing="8" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField"
+                   promptText="Digite parte do número ou nome do titular"
+                   HBox.hgrow="ALWAYS"/>
+        <Button text="Pesquisar" onAction="#onSearch"/>
+        <Button text="Mostrar todas" onAction="#onClearSearch"/>
+        <Button text="Fechar" onAction="#onClose"/>
+    </HBox>
+
+    <TableView fx:id="accountTable" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="accountIdColumn" text="Código" prefWidth="80"/>
+            <TableColumn fx:id="numberColumn" text="Número" prefWidth="150"/>
+            <TableColumn fx:id="ownerColumn" text="Titular" prefWidth="220"/>
+            <TableColumn fx:id="balanceColumn" text="Saldo" prefWidth="120"/>
+            <TableColumn fx:id="accountTypeColumn" text="Tipo" prefWidth="150"/>
+            <TableColumn fx:id="limitColumn" text="Limite" prefWidth="120"/>
+            <TableColumn fx:id="yieldRateColumn" text="Rendimento" prefWidth="120"/>
+        </columns>
+    </TableView>
+</VBox>
