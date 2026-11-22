@@ -41,4 +41,4 @@ build/
 ### MySQL ###
 prog3-mysql/src/main/resources/config.properties
 ted3e4/conta-bancaria/src/main/resources/config.properties
-ted3e4/projetoTed/src/main/resources/config.properties
+ted3e4/projetoTed/src/main/resources/db.properties
